@@ -2,10 +2,17 @@ import functools
 import numpy as np
 
 
+def binary_diagnostic():
+    with open("Day3/input.txt", 'r') as file:
+        data = " ".join(file.read().rstrip()).replace('\n', ';')
+        power_consumption = calculate_power_consumption(np.matrix(data))
+        result2 = 0
+        return power_consumption, result2
+
+
 def binary_diagnostic1():
     with open("Day3/input.txt", 'r') as file:
         data = " ".join(file.read().rstrip()).replace('\n', ';')
-        print(data)
         matrix = np.matrix(data)
         print(calculate_power_consumption(matrix))
 

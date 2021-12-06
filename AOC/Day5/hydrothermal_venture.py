@@ -22,10 +22,12 @@ class Line:
             yield curr_pos
 
 
-def hydrothermal_venture1():
+def hydrothermal_venture():
     with open('Day5/input.txt', 'r') as file:
         overlapping_points = 0
         terrain = {}
+        overlapping_points_diagonal = 0
+        terrain_diagonal = {}
         for line in file.readlines():
             curr_line = Line(line)
             if not curr_line.is_diagonal():
@@ -34,20 +36,12 @@ def hydrothermal_venture1():
                     terrain[point_tuple] = terrain.get(point_tuple, 0) + 1
                     if terrain[point_tuple] == 2:
                         overlapping_points += 1
-        print(overlapping_points)
 
-
-def hydrothermal_venture2():
-    with open('Day5/input.txt', 'r') as file:
-        overlapping_points = 0
-        terrain = {}
-        for line in file.readlines():
-            curr_line = Line(line)
             if not curr_line.is_diagonal() or curr_line.is_angle_45():
-                pass
                 for point in curr_line.iterate():
                     point_tuple = tuple(point)
-                    terrain[point_tuple] = terrain.get(point_tuple, 0) + 1
-                    if terrain[point_tuple] == 2:
-                        overlapping_points += 1
-        print(overlapping_points)
+                    terrain_diagonal[point_tuple] = terrain_diagonal.get(point_tuple, 0) + 1
+                    if terrain_diagonal[point_tuple] == 2:
+                        overlapping_points_diagonal += 1
+
+        return overlapping_points, overlapping_points_diagonal

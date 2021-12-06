@@ -1,13 +1,7 @@
-def dive1():
+def dive():
     with open('Day2/input.txt', 'r') as input_file:
         commands = input_file.readlines()
-        print(calculate_position(commands))
-
-
-def dive2():
-    with open('Day2/input.txt', 'r') as input_file:
-        commands = input_file.readlines()
-        print(calculate_position_with_aim(commands))
+        return calculate_position(commands), calculate_position_with_aim(commands)
 
 
 def calculate_position(commands):

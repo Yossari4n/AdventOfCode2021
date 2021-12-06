@@ -1,29 +1,21 @@
-def sonar_sweep1():
+def sonar_sweep():
     with open('Day1/input.txt', 'r') as input_file:
         measurements = input_file.readlines()
         measurements = list(map(int, measurements))
-        print(count_increases(measurements))
-        pass
+        result1 = count_increases(measurements)
 
-
-def sonar_sweep2():
-    with open('Day1/input.txt', 'r') as input_file:
-        measurements = input_file.readlines()
-        measurements = list(map(int, measurements))
         measurements = sliding_window(measurements, 3)
-        print(count_increases(measurements))
-        pass
+        result2 = count_increases(measurements)
+        return result1, result2
 
 
 def count_increases(collection):
     count = 0
-
     previous = collection[0]
     for current in collection[1:]:
         if current > previous:
             count += 1
         previous = current
-
     return count
 
 

@@ -1,7 +1,7 @@
 import numpy as np
 
 
-def giant_squid1():
+def giant_squid():
     with open('Day4/input.txt', 'r') as file:
         lines = file.readlines()
         numbers = list(map(int, lines[0].split(",")))
@@ -11,36 +11,29 @@ def giant_squid1():
             data = ''.join(lines[i: i + 5])[:-1].replace('\n', ' ; ')
             boards.append(np.matrix(data))
 
-        for number in numbers:
-            for board in boards:
-                score = calculate_board_score(number, board)
-                if score != -1:
-                    print(score)
-                    return
+        return find_first_score(numbers, boards), find_last_score(numbers, boards)
 
 
-def giant_squid2():
-    with open('Day4/input.txt', 'r') as file:
-        lines = file.readlines()
-        numbers = list(map(int, lines[0].split(",")))
+def find_first_score(numbers, boards):
+    for number in numbers:
+        for board in boards:
+            score = calculate_board_score(number, board)
+            if score != -1:
+                return score
 
-        boards = []
-        for i in range(2, len(lines), 6):
-            data = ''.join(lines[i: i + 5])[:-1].replace('\n', ' ; ')
-            boards.append(np.matrix(data))
 
-        last_score = 0
-        for number in numbers:
-            new_boards = []
-            for board in boards:
-                board_score = calculate_board_score(number, board)
-                if board_score != -1:
-                    last_score = board_score
-                else:
-                    new_boards.append(board)
-            boards = new_boards
-
-        print(last_score)
+def find_last_score(numbers, boards):
+    last_score = 0
+    for number in numbers:
+        new_boards = []
+        for board in boards:
+            board_score = calculate_board_score(number, board)
+            if board_score != -1:
+                last_score = board_score
+            else:
+                new_boards.append(board)
+        boards = new_boards
+    return last_score
 
 
 def calculate_board_score(number, board):
