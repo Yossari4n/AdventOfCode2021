@@ -3,6 +3,7 @@ from AOC.Day2 import dive
 from AOC.Day3 import binary_diagnostic
 from AOC.Day4 import giant_squid
 from AOC.Day5 import hydrothermal_venture
+from AOC.Day6 import lanternfish
 
 message_format = "Day {}: answer for puzzle 1 is {} and for puzzle 2 is {}"
 print("Advent of Code 2021")
@@ -27,3 +28,7 @@ print(message_format.format(4, result1, result2))
 # Day 5
 result1, result2 = hydrothermal_venture.hydrothermal_venture()
 print(message_format.format(5, result1, result2))
+
+# Day 6
+result1, result2 = lanternfish.lanternfish()
+print(message_format.format(6, result1, result2))
