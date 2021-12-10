@@ -47,7 +47,7 @@ class DigitDescriptor:
         }
 
     def signal_to_digit(self, signal):
-        for i, (key, value) in enumerate(self.numbers.items()):
+        for key, value in self.numbers.items():
             if set(key) == set(signal):
                 return value
 

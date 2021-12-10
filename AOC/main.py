@@ -5,7 +5,8 @@ from AOC.Day4 import giant_squid
 from AOC.Day5 import hydrothermal_venture
 from AOC.Day6 import lanternfish
 from AOC.Day7 import the_treachery_of_whales
-from AOC.Day8 import  seven_segment_search
+from AOC.Day8 import seven_segment_search
+from AOC.Day9 import smoke_basin
 
 message_format = "Day {}: answer for puzzle 1 is {} and for puzzle 2 is {}"
 print("Advent of Code 2021")
@@ -40,4 +41,9 @@ print("Advent of Code 2021")
 # print(message_format.format(7, result1, result2))
 
 # Day 8
-seven_segment_search.seven_segment_search()
+# result1, result2 = seven_segment_search.seven_segment_search()
+# print(message_format.format(8, result1, result2))
+
+# Day 9
+result1, result2 = smoke_basin.smoke_basin()
+print(message_format.format(9, result1, result2))
