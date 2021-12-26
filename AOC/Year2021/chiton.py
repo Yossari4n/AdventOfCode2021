@@ -1,5 +1,5 @@
 import numpy as np
-from AOC import helpers
+
 
 
 def chiton():
@@ -57,7 +57,7 @@ def find_path(cave, start, end):
             return reconstruct_path(came_from, current)
 
         open_set.remove(current)
-        for neighbor in helpers.get_adjacent_indices(current, cave, include_diagonal=False):
+        for neighbor in get_adjacent_indices(current, cave, include_diagonal=False):
             tentative_g_score = g_score[current] + h(neighbor)
             if tentative_g_score < g_score.get(neighbor, float('inf')):
                 came_from[neighbor] = current
