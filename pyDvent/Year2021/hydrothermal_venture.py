@@ -23,7 +23,7 @@ class Line:
 
 
 def hydrothermal_venture():
-    with open('Year2021/input/Day5.txt', 'r') as file:
+    with open('pyDvent/Year2021/input/Day5.txt', 'r') as file:
         overlapping_points = 0
         terrain = {}
         overlapping_points_diagonal = 0

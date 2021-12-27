@@ -3,19 +3,15 @@ import numpy as np
 
 
 def binary_diagnostic():
-    with open("Year2021/input/Day3.txt", 'r') as file:
+    with open("pyDvent/Year2021/input/Day3.txt", 'r') as file:
         data = " ".join(file.read().rstrip()).replace('\n', ';')
         power_consumption = calculate_power_consumption(np.matrix(data))
 
-        return power_consumption, None
-
-
-def binary_diagnostic2():
-    with open("Year2021/input/Day3.txt", 'r') as file:
+    with open("pyDvent/Year2021/input/Day3.txt", 'r') as file:
         binaries = file.readlines()
-        oxygen_generator_rating = calculate_oxygen_generator_rating(binaries, 0)
-        CO2_scrubber_rating = calculate_CO2_scrubber_rating(binaries, 0)
-        print(int(oxygen_generator_rating, 2) * int(CO2_scrubber_rating, 2))
+        life_support_rating = calculate_life_support_rating(binaries)
+
+    return power_consumption, life_support_rating
 
 
 def calculate_power_consumption(matrix):
@@ -43,7 +39,7 @@ def calculate_oxygen_generator_rating(binaries, position):
         return calculate_oxygen_generator_rating(with_0, position + 1)
 
 
-def calculate_CO2_scrubber_rating(binaries, position):
+def calculate_co2_scrubber_rating(binaries, position):
     if len(binaries) == 1:
         return binaries[0]
 
@@ -56,6 +52,12 @@ def calculate_CO2_scrubber_rating(binaries, position):
             with_0.append(binary)
 
     if len(with_1) < len(with_0):
-        return calculate_CO2_scrubber_rating(with_1, position + 1)
+        return calculate_co2_scrubber_rating(with_1, position + 1)
     else:
-        return calculate_CO2_scrubber_rating(with_0, position + 1)
+        return calculate_co2_scrubber_rating(with_0, position + 1)
+
+
+def calculate_life_support_rating(matrix):
+    oxygen_generator_rating = calculate_oxygen_generator_rating(matrix, 0)
+    co2_scrubber_rating = calculate_co2_scrubber_rating(matrix, 0)
+    return int(oxygen_generator_rating, 2) * int(co2_scrubber_rating, 2)

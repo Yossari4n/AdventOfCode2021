@@ -2,7 +2,7 @@ from collections import Counter
 
 
 def lanternfish():
-    with open('Year2021/input/Day6.txt', 'r') as file:
+    with open('pyDvent/Year2021/input/Day6.txt', 'r') as file:
         fish_list = list(map(int, file.read().split(',')))
         return simulate(fish_list, 80), simulate(fish_list, 256)
 

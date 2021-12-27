@@ -2,7 +2,7 @@ from functools import reduce
 
 
 def the_treachery_of_whales():
-    with open('Year2021/input/Day7.txt', 'r') as file:
+    with open('pyDvent/Year2021/input/Day7.txt', 'r') as file:
         positions = list(map(int, file.read().split(',')))
 
         return calculate_fuel(positions), calculate_fuel_partial_sum(positions)

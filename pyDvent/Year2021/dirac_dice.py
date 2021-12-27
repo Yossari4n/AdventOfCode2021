@@ -5,7 +5,7 @@ class Player:
 
 
 def dirac_dice():
-    with open('Year2021/input/Day21.txt') as file:
+    with open('pyDvent/Year2021/input/Day21.txt') as file:
         players = create_players(file.readlines())
         return find_winner(players), None
 

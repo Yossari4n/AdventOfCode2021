@@ -2,7 +2,7 @@ from collections import deque
 
 
 def arithmetic_logic_unit():
-    with open('Year2021/input/Day24.txt', 'r') as file:
+    with open('pyDvent/Year2021/input/Day24.txt', 'r') as file:
         program = file.readlines()
         input_buffer = deque(list('19999896149362'))
         register = run(program, input_buffer)

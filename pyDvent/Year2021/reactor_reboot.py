@@ -4,7 +4,7 @@ Cuboid = namedtuple('Cuboid', 'value, x_min, x_max, y_min, y_max, z_min, z_max')
 
 
 def reactor_reboot():
-    with open('Year2021/input/Day22.txt') as file:
+    with open('pyDvent/Year2021/input/Day22.txt') as file:
         cuboids = create_commands(file.readlines())
         return None, None
 

@@ -1,5 +1,5 @@
 def sea_cucumber():
-    with open('Year2021/input/Day25.txt', 'r') as file:
+    with open('pyDvent/Year2021/input/Day25.txt', 'r') as file:
         seafloor = [list(line.replace('\n', '')) for line in file.readlines()]
         result = simulate(seafloor)
         return result, None

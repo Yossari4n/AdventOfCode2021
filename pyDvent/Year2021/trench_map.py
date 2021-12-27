@@ -3,7 +3,7 @@ from functools import reduce
 
 
 def trench_map():
-    with open('Year2021/input/Day20.txt', 'r') as file:
+    with open('pyDvent/Year2021/input/Day20.txt', 'r') as file:
         lines = file.readlines()
         algorithm = lines[0].replace('\n', '')
         image = create_infinite_image(lines[2:])

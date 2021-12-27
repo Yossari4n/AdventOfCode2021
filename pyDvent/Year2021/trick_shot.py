@@ -1,5 +1,5 @@
 def trick_shot():
-    with open('Year2021/input/Day17.txt', 'r') as file:
+    with open('pyDvent/Year2021/input/Day17.txt', 'r') as file:
         x_target, y_target = read_target_area(file.readline())
         highest_trajectory = find_highest_trajectory(-y_target[1], -y_target[0])
         initial_trajectories = find_initial_trajectories((x_target, y_target))

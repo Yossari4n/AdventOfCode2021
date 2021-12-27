@@ -1,5 +1,5 @@
 def dive():
-    with open('Year2021/input/Day2.txt', 'r') as input_file:
+    with open('pyDvent/Year2021/input/Day2.txt', 'r') as input_file:
         commands = input_file.readlines()
         return calculate_position(commands), calculate_position_with_aim(commands)
 

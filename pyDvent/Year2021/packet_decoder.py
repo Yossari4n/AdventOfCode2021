@@ -2,7 +2,7 @@ import math
 
 
 def packet_decoder():
-    with open('Year2021/input/Day16.txt') as file:
+    with open('pyDvent/Year2021/input/Day16.txt') as file:
         message = file.read().replace('\n', '')
         _, result, versions_sum = process_packet(decode_message(message))
         return versions_sum, result

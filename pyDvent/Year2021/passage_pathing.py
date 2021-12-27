@@ -23,7 +23,7 @@ def create_cave_system(lines):
 
 
 def passage_pathing():
-    with open('Year2021/input/Day12.txt', 'r') as file:
+    with open('pyDvent/Year2021/input/Day12.txt', 'r') as file:
         cave_system = create_cave_system(file.readlines())
         result1 = len(find_paths(cave_system))
         result2 = len(find_paths2(cave_system))
