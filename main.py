@@ -1,128 +1,86 @@
-import pyDvent.Year2021.sonar_sweep
-import pyDvent.Year2021.dive
-import pyDvent.Year2021.binary_diagnostic
-import pyDvent.Year2021.giant_squid
-import pyDvent.Year2021.hydrothermal_venture
-import pyDvent.Year2021.lanternfish
-import pyDvent.Year2021.the_treachery_of_whales
-import pyDvent.Year2021.seven_segment_search
-import pyDvent.Year2021.smoke_basin
-import pyDvent.Year2021.syntax_scoring
-import pyDvent.Year2021.dumbo_octopus
-import pyDvent.Year2021.passage_pathing
-import pyDvent.Year2021.transparent_origami
-import pyDvent.Year2021.extended_polymerization
-import pyDvent.Year2021.chiton
-import pyDvent.Year2021.packet_decoder
-import pyDvent.Year2021.trick_shot
-import pyDvent.Year2021.snailfish
-import pyDvent.Year2021.beacon_scanner
-import pyDvent.Year2021.trench_map
-import pyDvent.Year2021.dirac_dice
-import pyDvent.Year2021.reactor_reboot
-import pyDvent.Year2021.amphipod
-import pyDvent.Year2021.arithmetic_logic_unit
-import pyDvent.Year2021.sea_cucumber
+from pyDvent.Year2021 import sonar_sweep, dive, binary_diagnostic, giant_squid, hydrothermal_venture, lanternfish, the_treachery_of_whales, seven_segment_search, smoke_basin, syntax_scoring, dumbo_octopus, passage_pathing ,transparent_origami, extended_polymerization, chiton, packet_decoder, trick_shot, snailfish, beacon_scanner, trench_map, dirac_dice, reactor_reboot, amphipod, arithmetic_logic_unit, sea_cucumber
+from pyDvent.Year2022 import calorie_counting
+from enum import Enum, IntEnum
 
-message_format = "Day {}: answer for puzzle 1 is {} and for puzzle 2 is {}"
-print("Advent of Code pyDvent.Year2021")
 
-# Day 1
-result1, result2 = pyDvent.Year2021.sonar_sweep.sonar_sweep()
-print(message_format.format(1, result1, result2))
+class Years(Enum):
+    Year2015 = 1,
+    Year2016 = 2,
+    Year2017 = 3,
+    Year2018 = 4,
+    Year2019 = 5,
+    Year2020 = 6,
+    Year2021 = 7,
+    Year2022 = 8
 
-# Day 2
-result1, result2 = pyDvent.Year2021.dive.dive()
-print(message_format.format(2, result1, result2))
 
-# Day 3
-result1, result2 = pyDvent.Year2021.binary_diagnostic.binary_diagnostic()
-print(message_format.format(3, result1, result2))
+class Days(IntEnum):
+    Day1 = 1,
+    Day2 = 2,
+    Day3 = 3,
+    Day4 = 4,
+    Day5 = 5,
+    Day6 = 6,
+    Day7 = 7,
+    Day8 = 8,
+    Day9 = 9,
+    Day10 = 10,
+    Day11 = 11,
+    Day12 = 12,
+    Day13 = 13,
+    Day14 = 14,
+    Day15 = 15,
+    Day16 = 16,
+    Day17 = 17,
+    Day18 = 18,
+    Day19 = 19,
+    Day20 = 20,
+    Day21 = 21,
+    Day22 = 22,
+    Day23 = 23,
+    Day24 = 24,
+    Day25 = 25
 
-# Day 4
-result1, result2 = pyDvent.Year2021.giant_squid.giant_squid()
-print(message_format.format(4, result1, result2))
 
-# Day 5
-result1, result2 = pyDvent.Year2021.hydrothermal_venture.hydrothermal_venture()
-print(message_format.format(5, result1, result2))
+solutions = {
+    Years.Year2021: {
+        Days.Day1: sonar_sweep.sonar_sweep,
+        Days.Day2: dive.dive,
+        Days.Day3: binary_diagnostic.binary_diagnostic,
+        Days.Day4: giant_squid.giant_squid,
+        Days.Day5: hydrothermal_venture.hydrothermal_venture,
+        Days.Day6: lanternfish.lanternfish,
+        Days.Day7: the_treachery_of_whales.the_treachery_of_whales,
+        Days.Day8: seven_segment_search.seven_segment_search,
+        Days.Day9: smoke_basin.smoke_basin,
+        Days.Day10: syntax_scoring.syntax_scoring,
+        Days.Day11: dumbo_octopus.dumbo_octopus,
+        Days.Day12: passage_pathing.passage_pathing,
+        Days.Day13: transparent_origami.transparent_origami,
+        Days.Day14: extended_polymerization.extended_polymerization,
+        Days.Day15: chiton.chiton,
+        Days.Day16: packet_decoder.packet_decoder,
+        Days.Day17: trick_shot.trick_shot,
+        Days.Day18: snailfish.snailfish,
+        Days.Day19: beacon_scanner.beacon_scanner,
+        Days.Day20: trench_map.trench_map,
+        Days.Day21: dirac_dice.dirac_dice,
+        Days.Day22: reactor_reboot.reactor_reboot,
+        Days.Day23: amphipod.amphipod,
+        Days.Day24: arithmetic_logic_unit.arithmetic_logic_unit,
+        Days.Day25: sea_cucumber.sea_cucumber
+    },
+    Years.Year2022: {
+        Days.Day1: calorie_counting.calorie_counting
+    }
+}
 
-# Day 6
-result1, result2 = pyDvent.Year2021.lanternfish.lanternfish()
-print(message_format.format(6, result1, result2))
 
-# Day 7
-result1, result2 = pyDvent.Year2021.the_treachery_of_whales.the_treachery_of_whales()
-print(message_format.format(7, result1, result2))
+def print_solution(year, day):
+    result1, result2 = solutions[year][day]()
+    message_format = "{} {}: answer for puzzle 1 is {} and for puzzle 2 is {}"
+    print(message_format.format(year.name, day.name, result1, result2))
 
-# Day 8
-result1, result2 = pyDvent.Year2021.seven_segment_search.seven_segment_search()
-print(message_format.format(8, result1, result2))
 
-# Day 9
-result1, result2 = pyDvent.Year2021.smoke_basin.smoke_basin()
-print(message_format.format(9, result1, result2))
-
-# Day 10
-result1, result2 = pyDvent.Year2021.syntax_scoring.syntax_scoring()
-print(message_format.format(10, result1, result2))
-
-# Day 11
-result1, result2 = pyDvent.Year2021.dumbo_octopus.dumbo_octopus()
-print(message_format.format(11, result1, result2))
-
-# Day 12
-result1, result2 = pyDvent.Year2021.passage_pathing.passage_pathing()
-print(message_format.format(12, result1, result2))
-
-# Day 13
-result1, result2 = pyDvent.Year2021.transparent_origami.transparent_origami()
-print(message_format.format(13, result1, '\n' + result2), end='')
-
-# Day 14
-result1, result2 = pyDvent.Year2021.extended_polymerization.extended_polymerization()
-print(message_format.format(14, result1, result2))
-
-# Day 15
-result1, result2 = pyDvent.Year2021.chiton.chiton()
-print(message_format.format(15, result1, result2))
-
-# Day 16
-result1, result2 = pyDvent.Year2021.packet_decoder.packet_decoder()
-print(message_format.format(16, result1, result2))
-
-# Day 17
-result1, result2 = pyDvent.Year2021.trick_shot.trick_shot()
-print(message_format.format(17, result1, result2))
-
-# Day 18
-result1, result2 = pyDvent.Year2021.snailfish.snailfish()
-print(message_format.format(18, result1, result2))
-
-# Day 19
-result1, result2 = pyDvent.Year2021.beacon_scanner.beacon_scanner()
-print(message_format.format(19, result1, result2))
-
-# Day 20
-result1, result2 = pyDvent.Year2021.trench_map.trench_map()
-print(message_format.format(20, result1, result2))
-
-# Day 21
-result1, result2 = pyDvent.Year2021.dirac_dice.dirac_dice()
-print(message_format.format(21, result1, result2))
-
-# Day 22
-result1, result2 = pyDvent.Year2021.reactor_reboot.reactor_reboot()
-print(message_format.format(22, result1, result2))
-
-# Day 23
-result1, result2 = pyDvent.Year2021.amphipod.amphipod()
-print(message_format.format(23, result1, result2))
-
-# Day 24
-result1, result2 = pyDvent.Year2021.arithmetic_logic_unit.arithmetic_logic_unit()
-print(message_format.format(24, result1, result2))
-
-# Day 25
-result1, result2 = pyDvent.Year2021.sea_cucumber.sea_cucumber()
-print(message_format.format(25, result1, result2))
+print("Advent of Code")
+print_solution(Years.Year2022, Days.Day1)
