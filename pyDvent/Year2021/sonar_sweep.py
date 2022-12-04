@@ -1,5 +1,5 @@
-def sonar_sweep():
-    with open('pyDvent/Year2021/input/Day1.txt', 'r') as input_file:
+def sonar_sweep(file_path):
+    with open(file_path, 'r') as input_file:
         measurements = input_file.readlines()
         measurements = list(map(int, measurements))
         result1 = count_increases(measurements)

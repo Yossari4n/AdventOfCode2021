@@ -1,8 +1,8 @@
 from collections import Counter
 
 
-def lanternfish():
-    with open('pyDvent/Year2021/input/Day6.txt', 'r') as file:
+def lanternfish(file_path):
+    with open(file_path, 'r') as file:
         fish_list = list(map(int, file.read().split(',')))
         return simulate(fish_list, 80), simulate(fish_list, 256)
 

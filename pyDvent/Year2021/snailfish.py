@@ -4,8 +4,8 @@ import ast
 from functools import reduce
 
 
-def snailfish():
-    with open('pyDvent/Year2021/input/Day18.txt', 'r') as file:
+def snailfish(file_path):
+    with open(file_path, 'r') as file:
         snailfish_numbers = create_snailfish_numbers(file.readlines())
         result = reduce(lambda a, b: reduce_snailfish_number(add_snailfish_numbers(a, b)), snailfish_numbers)
         magnitude = calculate_snailfish_number_magnitude(result)

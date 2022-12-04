@@ -1,2 +1,2 @@
-def beacon_scanner():
+def beacon_scanner(file_path):
     return None, None

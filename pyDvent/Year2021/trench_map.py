@@ -2,8 +2,8 @@ from operator import itemgetter
 from functools import reduce
 
 
-def trench_map():
-    with open('pyDvent/Year2021/input/Day20.txt', 'r') as file:
+def trench_map(file_path):
+    with open(file_path, 'r') as file:
         lines = file.readlines()
         algorithm = lines[0].replace('\n', '')
         image = create_infinite_image(lines[2:])

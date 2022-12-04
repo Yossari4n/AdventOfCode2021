@@ -3,8 +3,8 @@ from collections import namedtuple
 Cuboid = namedtuple('Cuboid', 'value, x_min, x_max, y_min, y_max, z_min, z_max')
 
 
-def reactor_reboot():
-    with open('pyDvent/Year2021/input/Day22.txt') as file:
+def reactor_reboot(file_path):
+    with open(file_path, 'r') as file:
         cuboids = create_commands(file.readlines())
         return None, None
 

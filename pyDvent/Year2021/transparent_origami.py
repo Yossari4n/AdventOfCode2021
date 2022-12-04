@@ -2,8 +2,8 @@ import numpy as np
 from operator import itemgetter
 
 
-def transparent_origami():
-    with open('pyDvent/Year2021/input/Day13.txt', 'r') as file:
+def transparent_origami(file_path):
+    with open(file_path, 'r') as file:
         lines = file.readlines()
         empty_line = lines.index('\n')
         paper = create_transparent_paper(lines[:empty_line])

@@ -52,8 +52,8 @@ class DigitDescriptor:
                 return value
 
 
-def seven_segment_search():
-    with open('pyDvent/Year2021/input/Day8.txt', 'r') as file:
+def seven_segment_search(file_path):
+    with open(file_path, 'r') as file:
         segments = []
         digits = []
         for line in file.readlines():

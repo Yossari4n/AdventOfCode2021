@@ -1,8 +1,8 @@
 import numpy as np
 
 
-def giant_squid():
-    with open('pyDvent/Year2021/input/Day4.txt', 'r') as file:
+def giant_squid(file_path):
+    with open(file_path, 'r') as file:
         lines = file.readlines()
         numbers = list(map(int, lines[0].split(",")))
 

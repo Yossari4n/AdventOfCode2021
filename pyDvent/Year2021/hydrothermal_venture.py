@@ -22,8 +22,8 @@ class Line:
             yield curr_pos
 
 
-def hydrothermal_venture():
-    with open('pyDvent/Year2021/input/Day5.txt', 'r') as file:
+def hydrothermal_venture(file_path):
+    with open(file_path, 'r') as file:
         overlapping_points = 0
         terrain = {}
         overlapping_points_diagonal = 0

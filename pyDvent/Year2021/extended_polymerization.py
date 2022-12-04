@@ -1,8 +1,8 @@
 import operator
 
 
-def extended_polymerization():
-    with open('pyDvent/Year2021/input/Day14.txt', 'r') as file:
+def extended_polymerization(file_path):
+    with open(file_path, 'r') as file:
         lines = file.readlines()
         template = lines[0].replace('\n', '')
         rules = create_rules(lines[2:])

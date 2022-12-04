@@ -1,6 +1,6 @@
-def calorie_counting():
+def calorie_counting(file_path):
     all_records = []
-    with open('pyDvent/Year2022/input/Day1.txt', 'r') as calories:
+    with open(file_path, 'r') as calories:
         total = 0
         for entry in calories:
             if entry == '\n':

@@ -2,8 +2,8 @@ import numpy as np
 import operator
 
 
-def dumbo_octopus():
-    with open('pyDvent/Year2021/input/Day11.txt', 'r') as file:
+def dumbo_octopus(file_path):
+    with open(file_path, 'r') as file:
         data = " ".join(file.read().replace('\n', ';'))
         result1 = count_flashes(np.matrix(data), 100)
         result2 = find_first_full_flash(np.matrix(data))

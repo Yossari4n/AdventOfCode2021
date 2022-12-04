@@ -2,12 +2,12 @@ import functools
 import numpy as np
 
 
-def binary_diagnostic():
-    with open("pyDvent/Year2021/input/Day3.txt", 'r') as file:
+def binary_diagnostic(input_file):
+    with open(input_file, 'r') as file:
         data = " ".join(file.read().rstrip()).replace('\n', ';')
         power_consumption = calculate_power_consumption(np.matrix(data))
 
-    with open("pyDvent/Year2021/input/Day3.txt", 'r') as file:
+    with open(input_file, 'r') as file:
         binaries = file.readlines()
         life_support_rating = calculate_life_support_rating(binaries)
 

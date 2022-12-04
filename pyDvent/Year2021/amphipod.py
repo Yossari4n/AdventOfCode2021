@@ -4,8 +4,8 @@ from copy import deepcopy
 current_min = float('inf')
 
 
-def amphipod():
-    with open('pyDvent/Year2021/input/Day25.txt', 'r') as file:
+def amphipod(file_path):
+    with open(file_path, 'r') as file:
         board = [list(line.replace(' ', '#').replace('\n', '')) for line in file.readlines()]
         return 11332, None
 

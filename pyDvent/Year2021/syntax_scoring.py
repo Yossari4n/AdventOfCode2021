@@ -1,8 +1,8 @@
 from collections import deque
 
 
-def syntax_scoring():
-    with open('pyDvent/Year2021/input/Day10.txt', 'r') as file:
+def syntax_scoring(file_path):
+    with open(file_path, 'r') as file:
         lines = file.readlines()
 
         score1 = 0

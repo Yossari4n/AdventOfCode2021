@@ -4,8 +4,8 @@ class Player:
         self.score = 0
 
 
-def dirac_dice():
-    with open('pyDvent/Year2021/input/Day21.txt') as file:
+def dirac_dice(file_path):
+    with open(file_path, 'r') as file:
         players = create_players(file.readlines())
         return find_winner(players), None
 

@@ -1,9 +1,8 @@
 import numpy as np
-from functools import reduce
 
 
-def smoke_basin():
-    with open('pyDvent/Year2021/input/Day9.txt', 'r') as file:
+def smoke_basin(file_path):
+    with open(file_path, 'r') as file:
         data = " ".join(file.read().rstrip()).replace('\n', ';')
         heightmap = np.matrix(data)
 

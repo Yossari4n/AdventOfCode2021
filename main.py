@@ -1,6 +1,7 @@
 from pyDvent.Year2021 import sonar_sweep, dive, binary_diagnostic, giant_squid, hydrothermal_venture, lanternfish, the_treachery_of_whales, seven_segment_search, smoke_basin, syntax_scoring, dumbo_octopus, passage_pathing ,transparent_origami, extended_polymerization, chiton, packet_decoder, trick_shot, snailfish, beacon_scanner, trench_map, dirac_dice, reactor_reboot, amphipod, arithmetic_logic_unit, sea_cucumber
-from pyDvent.Year2022 import calorie_counting
+from pyDvent.Year2022 import calorie_counting, rucksack_reorganization, camp_cleanup
 from enum import Enum, IntEnum
+import time
 
 
 class Years(Enum):
@@ -71,16 +72,20 @@ solutions = {
         Days.Day25: sea_cucumber.sea_cucumber
     },
     Years.Year2022: {
-        Days.Day1: calorie_counting.calorie_counting
+        Days.Day1: calorie_counting.calorie_counting,
+        Days.Day3: rucksack_reorganization.rucksack_reorganization,
+        Days.Day4: camp_cleanup.camp_cleanup
     }
 }
 
 
-def print_solution(year, day):
-    result1, result2 = solutions[year][day]()
-    message_format = "{} {}: answer for puzzle 1 is {} and for puzzle 2 is {}"
-    print(message_format.format(year.name, day.name, result1, result2))
+def print_solution(year, day, file_path):
+    start = time.time()
+    result1, result2 = solutions[year][day](file_path)
+    end = time.time()
+    message_format = "Solved {0} {1} in {2:.5f}s, results are\nPart 1: {3}\nPart 2: {4}"
+    print(message_format.format(year.name, day.name, end - start, result1, result2))
 
 
 print("Advent of Code")
-print_solution(Years.Year2022, Days.Day1)
+print_solution(Years.Year2022, Days.Day4, 'input/Year2022/Day4.txt')

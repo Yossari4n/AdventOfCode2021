@@ -1,8 +1,8 @@
 import math
 
 
-def packet_decoder():
-    with open('pyDvent/Year2021/input/Day16.txt') as file:
+def packet_decoder(file_path):
+    with open(file_path, 'r') as file:
         message = file.read().replace('\n', '')
         _, result, versions_sum = process_packet(decode_message(message))
         return versions_sum, result
