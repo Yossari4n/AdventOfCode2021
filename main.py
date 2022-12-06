@@ -2,7 +2,8 @@ from pyDvent.Year2021 import sonar_sweep, dive, binary_diagnostic, giant_squid, 
     the_treachery_of_whales, seven_segment_search, smoke_basin, syntax_scoring, dumbo_octopus, passage_pathing, \
     transparent_origami, extended_polymerization, chiton, packet_decoder, trick_shot, snailfish, beacon_scanner, \
     trench_map, dirac_dice, reactor_reboot, amphipod, arithmetic_logic_unit, sea_cucumber
-from pyDvent.Year2022 import calorie_counting, rock_paper_scissors, rucksack_reorganization, camp_cleanup, supply_stacks
+from pyDvent.Year2022 import calorie_counting, rock_paper_scissors, rucksack_reorganization, camp_cleanup, \
+    supply_stacks, tuning_trouble
 from enum import Enum, IntEnum
 import time
 
@@ -80,6 +81,7 @@ solutions = {
         Days.Day3: rucksack_reorganization.rucksack_reorganization,
         Days.Day4: camp_cleanup.camp_cleanup,
         Days.Day5: supply_stacks.supply_stacks,
+        Days.Day6: tuning_trouble.tuning_trouble,
     }
 }
 
@@ -93,4 +95,4 @@ def print_solution(year, day, file_path):
 
 
 print("Advent of Code")
-print_solution(Years.Year2022, Days.Day2, 'input/Year2022/Day2.txt')
+print_solution(Years.Year2022, Days.Day6, 'input/Year2022/Day6.txt')
