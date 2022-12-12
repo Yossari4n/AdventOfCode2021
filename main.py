@@ -3,8 +3,8 @@ from pyDvent.Year2021 import sonar_sweep, dive, binary_diagnostic, giant_squid, 
     transparent_origami, extended_polymerization, chiton, packet_decoder, trick_shot, snailfish, beacon_scanner, \
     trench_map, dirac_dice, reactor_reboot, amphipod, arithmetic_logic_unit, sea_cucumber
 from pyDvent.Year2022 import calorie_counting, rock_paper_scissors, rucksack_reorganization, camp_cleanup, \
-    supply_stacks, tuning_trouble, no_space_left_on_device, treetop_tree_house, rope_bridge
-from enum import Enum, IntEnum
+    supply_stacks, tuning_trouble, no_space_left_on_device, treetop_tree_house, rope_bridge, cathorode_tube
+from enum import Enum
 import time
 
 
@@ -19,7 +19,7 @@ class Years(Enum):
     Year2022 = 8
 
 
-class Days(IntEnum):
+class Days(Enum):
     Day1 = 1,
     Day2 = 2,
     Day3 = 3,
@@ -85,6 +85,7 @@ solutions = {
         Days.Day7: no_space_left_on_device.no_space_left_on_device,
         Days.Day8: treetop_tree_house.treetop_tree_house,
         Days.Day9: rope_bridge.rope_bridge,
+        Days.Day10: cathorode_tube.cathorode_tube,
     }
 }
 
@@ -97,5 +98,6 @@ def print_solution(year, day, file_path):
     print(message_format.format(year.name, day.name, end - start, result1, result2))
 
 
-print("Advent of Code")
-print_solution(Years.Year2022, Days.Day9, 'input/Year2022/Day9.txt')
+if __name__ == "__main__":
+    print("Advent of Code")
+    print_solution(Years.Year2022, Days.Day10, 'input/Year2022/Day10.txt')
