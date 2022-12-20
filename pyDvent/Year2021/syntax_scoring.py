@@ -4,21 +4,14 @@ from collections import deque
 def syntax_scoring(file_path):
     with open(file_path, 'r') as file:
         lines = file.readlines()
+        result1 = sum(score_syntax_error(line) for line in lines)
+        scores = list(filter(
+            lambda fix_score: fix_score > 0,
+            list(map(score_fix, [fix_syntax(line.replace('\n', '')) for line in lines]))
+        ))
+        result2 = list(sorted(scores))[len(scores) // 2]
 
-        score1 = 0
-        for line in lines:
-            score1 += score_syntax_error(line)
-
-        scores = []
-        for line in lines:
-            fix = fix_syntax(line.replace('\n', ''))
-            fix_score = score_fix(fix)
-            if fix_score > 0:
-                scores.append(fix_score)
-
-        score2 = list(sorted(scores))[int(len(scores) / 2)]
-
-        return score1, score2
+        return result1, result2
 
 
 def score_syntax_error(line):

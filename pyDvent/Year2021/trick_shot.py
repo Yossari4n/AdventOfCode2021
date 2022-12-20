@@ -1,10 +1,13 @@
+from pyDvent import commons
+
+
 def trick_shot(file_path):
     with open(file_path, 'r') as file:
         x_target, y_target = read_target_area(file.readline())
         highest_trajectory = find_highest_trajectory(-y_target[1], -y_target[0])
         initial_trajectories = find_initial_trajectories((x_target, y_target))
 
-        return highest_trajectory, len(initial_trajectories)
+        return int(highest_trajectory), len(initial_trajectories)
 
 
 def read_target_area(line):
@@ -13,20 +16,16 @@ def read_target_area(line):
         range_tokens = token.split('..')
         return int(range_tokens[0]), int(range_tokens[1])
 
-    tokens = line[13:].split(' ')
+    tokens = line[len('target area: '):].split(' ')
     return get_range(tokens[0]), get_range(tokens[1])
-
-
-def partial_sum(index):
-    return index * (index + 1) / 2
 
 
 def find_highest_trajectory(min_y, max_y):
     velocity = 0
     max_velocity = None
     while True:
-        if min_y < partial_sum(velocity) - partial_sum(velocity - 1) < max_y:
-            max_velocity = partial_sum(velocity)
+        if min_y < commons.partial_sum(velocity) - commons.partial_sum(velocity - 1) < max_y:
+            max_velocity = commons.partial_sum(velocity)
         else:
             if max_velocity is not None:
                 return max_velocity

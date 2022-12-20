@@ -15,7 +15,7 @@ def transparent_origami(file_path):
             paper = command(paper)
         result2 = decode_result(paper)
 
-        return result1, result2
+        return int(result1), result2
 
 
 def create_transparent_paper(lines):
@@ -76,8 +76,8 @@ def decode_result(paper):
     for r in range(paper.shape[0]):
         for c in range(paper.shape[1]):
             if paper[r, c] == 1:
-                result += '# '
+                result += '#'
             else:
-                result += '. '
+                result += '.'
         result += '\n'
     return result

@@ -4,7 +4,7 @@ import numpy as np
 def treetop_tree_house(input_path):
     with open(input_path, 'r') as input_file:
         grid = np.matrix(" ".join(input_file.read().rstrip()).replace('\n', ';'))
-        inner_trees = list(filter(lambda iv: (0, 0) < iv[0] < (grid.shape[0] - 1, grid.shape[1] - 1), np.ndenumerate(grid)))
+        inner_trees = list(filter(lambda iv: 0 < iv[0][0] < grid.shape[0] - 1 and 0 < iv[0][1] < grid.shape[1] - 1, np.ndenumerate(grid)))
 
         def calculate_visibility(grid, row, column, tree):
             visibility = max(np.squeeze(np.asarray(grid[row]))[column + 1:]) < tree  # Trees to the right

@@ -25,7 +25,7 @@ def chiton(file_path):
         path = find_path(full_cave, (0, 0), (full_cave.shape[0] - 1, full_cave.shape[1] - 1))
         result2 = sum(full_cave[point[0], point[1]] for point in path) - full_cave[0, 0]
 
-        return result1, result2
+        return result1, int(result2)
 
 
 def find_path(cave, start, end):
@@ -67,11 +67,3 @@ def find_path(cave, start, end):
                     open_set.add(neighbor)
 
     return None
-
-
-def print_path(path, cave):
-    for row in range(cave.shape[0]):
-        for col in range(cave.shape[1]):
-            symbol = '#' if (row, col) in path else '.'
-            print(symbol, end='')
-        print()

@@ -103,4 +103,4 @@ def print_solution(year, day, file_path):
 
 if __name__ == "__main__":
     print("Advent of Code")
-    print_solution(Years.Year2022, Days.Day12, 'input/Year2022/Day12.txt')
+    print_solution(Years.Year2021, Days.Day20, 'input/Year2021/Day20.txt')

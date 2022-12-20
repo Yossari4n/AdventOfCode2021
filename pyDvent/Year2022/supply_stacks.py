@@ -14,14 +14,14 @@ def supply_stacks(input_path):
             to_move.reverse()
             stacks[procedure.target].extend(to_move)
             del stacks[procedure.source][-procedure.amount:]
-        result1 = sum([value[-1] for _, value in stacks.items()])
+        result1 = ''.join([value[-1] for _, value in stacks.items()])
 
     with open(input_path, 'r') as input_file:
         stacks, procedures = read_input(input_file)
         for procedure in procedures:
             stacks[procedure.target].extend(stacks[procedure.source][-procedure.amount:])
             del stacks[procedure.source][-procedure.amount:]
-        result2 = sum([value[-1] for _, value in stacks.items()])
+        result2 = ''.join([value[-1] for _, value in stacks.items()])
 
     return result1, result2
 
