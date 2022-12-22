@@ -34,9 +34,20 @@ def get_adjacent_values(index, grid, include_diagonal, default=None):
     return values
 
 
+# common maths
+
 def partial_sum(n):
     return n * (n + 1) / 2
 
 
 def clamp(n, a, b):
     return max(min(b, n), a)
+
+
+def three_way_comparison(a, b):
+    if a == b:
+        return 0
+    elif a > b:
+        return 1
+    else:
+        return -1

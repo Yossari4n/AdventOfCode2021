@@ -4,7 +4,7 @@ from pyDvent.Year2021 import sonar_sweep, dive, binary_diagnostic, giant_squid, 
     trench_map, dirac_dice, reactor_reboot, amphipod, arithmetic_logic_unit, sea_cucumber
 from pyDvent.Year2022 import calorie_counting, rock_paper_scissors, rucksack_reorganization, camp_cleanup, \
     supply_stacks, tuning_trouble, no_space_left_on_device, treetop_tree_house, rope_bridge, cathorode_tube, \
-    monkey_in_the_middle, hill_climbing_algorithm
+    monkey_in_the_middle, hill_climbing_algorithm, distress_signal
 from enum import Enum
 import time
 
@@ -89,6 +89,7 @@ solutions = {
         Days.Day10: cathorode_tube.cathorode_tube,
         Days.Day11: monkey_in_the_middle.monkey_in_the_middle,
         Days.Day12: hill_climbing_algorithm.hill_climbing_algorithm,
+        Days.Day13: distress_signal.distress_signal,
     }
 }
 
@@ -103,4 +104,4 @@ def print_solution(year, day, file_path):
 
 if __name__ == "__main__":
     print("Advent of Code")
-    print_solution(Years.Year2021, Days.Day20, 'input/Year2021/Day20.txt')
+    print_solution(Years.Year2022, Days.Day13, 'input/Year2022/Day13.txt')
